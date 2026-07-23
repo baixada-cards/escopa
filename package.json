@@ -1,0 +1,66 @@
+{
+  "name": "@baixada-cards/escopa",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A local two-player Escopa table from Baixada.",
+  "type": "module",
+  "scripts": {
+    "build": "next build",
+    "check:actions": "node scripts/check-actions.mjs",
+    "check:boundary": "node scripts/check-public-boundary.mjs",
+    "dev": "next dev",
+    "lint": "eslint .",
+    "lint:css": "stylelint \"src/components/escopa/*.css\"",
+    "start": "next start",
+    "test": "node --test --experimental-strip-types src/lib/*.test.ts",
+    "test:e2e": "playwright test",
+    "typecheck": "tsc --noEmit",
+    "check": "pnpm check:actions && pnpm check:boundary && pnpm lint && pnpm lint:css && pnpm typecheck && pnpm test && pnpm build"
+  },
+  "dependencies": {
+    "@baixada-cards/design-system": "git+https://github.com/baixada-cards/design-system.git#82638b7cdabbb56a4bce7b953e8571847bf6fda9",
+    "next": "^16.2.11",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^25.5.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "globals": "^15.14.0",
+    "stylelint": "^17.14.0",
+    "typescript": "~5.6.2",
+    "typescript-eslint": "^8.64.0"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "sharp"
+    ],
+    "overrides": {
+      "ajv@>=6.0.0 <6.14.0": "6.14.0",
+      "brace-expansion@<1.1.16": "1.1.16",
+      "brace-expansion@>=2.0.0 <2.1.2": "2.1.2",
+      "fast-uri@>=3.0.0 <3.1.4": "3.1.4",
+      "flatted@<3.4.2": "3.4.2",
+      "js-yaml@>=4.0.0 <4.3.0": "4.3.0",
+      "minimatch@>=3.0.0 <3.1.4": "3.1.4",
+      "minimatch@>=9.0.0 <9.0.7": "9.0.7",
+      "picomatch@>=4.0.0 <4.0.4": "4.0.4",
+      "postcss@<8.5.12": "8.5.12",
+      "sharp@<0.35.0": "0.35.0"
+    }
+  },
+  "packageManager": "pnpm@10.26.2",
+  "engines": {
+    "node": ">=24"
+  },
+  "volta": {
+    "node": "24.12.0",
+    "pnpm": "10.26.2"
+  }
+}

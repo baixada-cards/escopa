@@ -1,0 +1,92 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "scoring/majority-cards/most-cards-category",
+  "ruleset": "escopa-2p-v1",
+  "description": "Player with the most captured cards earns the majority cards category point.",
+  "deck_type": "spanish",
+  "initial_state": {
+    "dealer": 0,
+    "next_player": 1,
+    "score": {
+      "0": 8,
+      "1": 7
+    },
+    "stock_remaining": 0,
+    "hands": {
+      "0": [],
+      "1": []
+    },
+    "captured": {
+      "0": [
+        { "id": "mc0", "rank": "A", "suit": "OROS" },
+        { "id": "mc1", "rank": "2", "suit": "OROS" },
+        { "id": "mc2", "rank": "3", "suit": "OROS" },
+        { "id": "mc3", "rank": "4", "suit": "OROS" },
+        { "id": "mc4", "rank": "5", "suit": "OROS" }
+      ],
+      "1": [
+        { "id": "mc5", "rank": "6", "suit": "OROS" },
+        { "id": "mc6", "rank": "7", "suit": "OROS" },
+        { "id": "mc7", "rank": "Q", "suit": "OROS" },
+        { "id": "mc8", "rank": "J", "suit": "OROS" }
+      ]
+    },
+    "table": [],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "OROS"
+  },
+  "action": {
+    "type": "assert_deck"
+  },
+  "expected": {
+    "state": {
+      "dealer": 0,
+      "next_player": 1,
+      "score": {
+        "0": 8,
+        "1": 7
+      },
+      "stock_remaining": 0,
+      "hands": {
+        "0": [],
+        "1": []
+      },
+      "captured": {
+        "0": [
+          { "id": "mc0", "rank": "A", "suit": "OROS" },
+          { "id": "mc1", "rank": "2", "suit": "OROS" },
+          { "id": "mc2", "rank": "3", "suit": "OROS" },
+          { "id": "mc3", "rank": "4", "suit": "OROS" },
+          { "id": "mc4", "rank": "5", "suit": "OROS" }
+        ],
+        "1": [
+          { "id": "mc5", "rank": "6", "suit": "OROS" },
+          { "id": "mc6", "rank": "7", "suit": "OROS" },
+          { "id": "mc7", "rank": "Q", "suit": "OROS" },
+          { "id": "mc8", "rank": "J", "suit": "OROS" }
+        ]
+      },
+      "table": [],
+      "scopas": {
+        "0": 0,
+        "1": 0
+      },
+      "target_score": 15,
+      "scoring_suit": "OROS"
+    },
+    "assertions": {
+      "category": "majority_cards",
+      "majority_cards": {
+        "winner": 0,
+        "player_card_count": {
+          "0": 5,
+          "1": 4
+        }
+      }
+    }
+  }
+}

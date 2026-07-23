@@ -1,0 +1,105 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "scoring/match-end-at-15/round-closes-match",
+  "ruleset": "escopa-2p-v1",
+  "description": "Match ends immediately when one player reaches or passes 15 points.",
+  "deck_type": "spanish",
+  "initial_state": {
+    "dealer": 0,
+    "next_player": 0,
+    "score": {
+      "0": 14,
+      "1": 9
+    },
+    "stock_remaining": 0,
+    "hands": {
+      "0": [
+        { "id": "m15p0", "rank": "K", "suit": "COPAS" }
+      ],
+      "1": []
+    },
+    "captured": {
+      "0": [
+        { "id": "m15c0", "rank": "2", "suit": "COPAS" },
+        { "id": "m15c1", "rank": "3", "suit": "ESPADAS" },
+        { "id": "m15c2", "rank": "4", "suit": "BASTOS" }
+      ],
+      "1": [
+        { "id": "m15c3", "rank": "A", "suit": "COPAS" },
+        { "id": "m15c4", "rank": "2", "suit": "ESPADAS" },
+        { "id": "m15c5", "rank": "3", "suit": "BASTOS" },
+        { "id": "m15c6", "rank": "4", "suit": "COPAS" },
+        { "id": "m15c7", "rank": "5", "suit": "ESPADAS" },
+        { "id": "m15c8", "rank": "6", "suit": "COPAS" }
+      ]
+    },
+    "table": [
+      { "id": "m15t0", "rank": "5", "suit": "BASTOS" },
+      { "id": "m15t1", "rank": "A", "suit": "BASTOS" }
+    ],
+    "scopas": {
+      "0": 1,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "OROS"
+  },
+  "action": {
+    "type": "play_card",
+    "player": 0,
+    "card_id": "m15p0",
+    "captured_card_ids": ["m15t0"]
+  },
+  "expected": {
+    "state": {
+      "dealer": 0,
+      "next_player": null,
+      "score": {
+        "0": 15,
+        "1": 9
+      },
+      "stock_remaining": 0,
+      "hands": {
+        "0": [],
+        "1": []
+      },
+      "captured": {
+        "0": [
+          { "id": "m15c0", "rank": "2", "suit": "COPAS" },
+          { "id": "m15c1", "rank": "3", "suit": "ESPADAS" },
+          { "id": "m15c2", "rank": "4", "suit": "BASTOS" },
+          { "id": "m15p0", "rank": "K", "suit": "COPAS" },
+          { "id": "m15t0", "rank": "5", "suit": "BASTOS" },
+          { "id": "m15t1", "rank": "A", "suit": "BASTOS" }
+        ],
+        "1": [
+          { "id": "m15c3", "rank": "A", "suit": "COPAS" },
+          { "id": "m15c4", "rank": "2", "suit": "ESPADAS" },
+          { "id": "m15c5", "rank": "3", "suit": "BASTOS" },
+          { "id": "m15c6", "rank": "4", "suit": "COPAS" },
+          { "id": "m15c7", "rank": "5", "suit": "ESPADAS" },
+          { "id": "m15c8", "rank": "6", "suit": "COPAS" }
+        ]
+      },
+      "table": [],
+      "scopas": {
+        "0": 1,
+        "1": 0
+      },
+      "target_score": 15,
+      "scoring_suit": "OROS",
+      "last_captor": 0,
+      "round_complete": true,
+      "match_complete": true,
+      "round_points": {
+        "0": 1,
+        "1": 0
+      }
+    },
+    "assertions": {
+      "match_end": true,
+      "winner": 0,
+      "round_end": true
+    }
+  }
+}

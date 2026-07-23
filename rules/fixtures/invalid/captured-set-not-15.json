@@ -1,0 +1,52 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "invalid/captured-set-not-15",
+  "ruleset": "escopa-2p-v1",
+  "description": "Reject captures where played card plus chosen table cards do not sum to 15.",
+  "deck_type": "spanish",
+  "initial_state": {
+    "dealer": 1,
+    "next_player": 1,
+    "score": {
+      "0": 0,
+      "1": 0
+    },
+    "stock_remaining": 29,
+    "hands": {
+      "0": [
+        { "id": "n0p0", "rank": "7", "suit": "OROS" }
+      ],
+      "1": [
+        { "id": "n0p1", "rank": "Q", "suit": "BASTOS" },
+        { "id": "n0p1b", "rank": "2", "suit": "OROS" },
+        { "id": "n0p1c", "rank": "3", "suit": "COPAS" }
+      ]
+    },
+    "captured": {
+      "0": [],
+      "1": []
+    },
+    "table": [
+      { "id": "n0t0", "rank": "2", "suit": "OROS" },
+      { "id": "n0t1", "rank": "3", "suit": "ESPADAS" }
+    ],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "OROS"
+  },
+  "action": {
+    "type": "play_card",
+    "player": 1,
+    "card_id": "n0p1",
+    "captured_card_ids": ["n0t0", "n0t1"]
+  },
+  "expected": {
+    "rejection": {
+      "category": "captured_set_not_15",
+      "message_contains": "does not sum to 15"
+    }
+  }
+}

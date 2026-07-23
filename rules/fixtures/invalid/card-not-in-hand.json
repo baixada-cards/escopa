@@ -1,0 +1,51 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "invalid/card-not-in-hand",
+  "ruleset": "escopa-2p-v1",
+  "description": "Reject play when played card id is not in the active player's hand.",
+  "deck_type": "spanish",
+  "initial_state": {
+    "dealer": 1,
+    "next_player": 1,
+    "score": {
+      "0": 0,
+      "1": 0
+    },
+    "stock_remaining": 32,
+    "hands": {
+      "0": [
+        { "id": "c0p0", "rank": "3", "suit": "OROS" }
+      ],
+      "1": [
+        { "id": "c1p1", "rank": "K", "suit": "COPAS" },
+        { "id": "c1p1b", "rank": "2", "suit": "ESPADAS" },
+        { "id": "c1p1c", "rank": "7", "suit": "BASTOS" }
+      ]
+    },
+    "captured": {
+      "0": [],
+      "1": []
+    },
+    "table": [
+      { "id": "c1t0", "rank": "4", "suit": "OROS" },
+      { "id": "c1t1", "rank": "5", "suit": "COPAS" }
+    ],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "OROS"
+  },
+  "action": {
+    "type": "play_card",
+    "player": 1,
+    "card_id": "c1-missing"
+  },
+  "expected": {
+    "rejection": {
+      "category": "card_not_in_hand",
+      "message_contains": "is not in player's hand"
+    }
+  }
+}

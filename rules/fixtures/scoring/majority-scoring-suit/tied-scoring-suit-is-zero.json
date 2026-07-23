@@ -1,0 +1,86 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "scoring/majority-scoring-suit/tied-scoring-suit-is-zero",
+  "ruleset": "escopa-2p-v1",
+  "description": "Tied majority scoring suit counts awards zero points.",
+  "deck_type": "spanish",
+  "initial_state": {
+    "dealer": 1,
+    "next_player": 0,
+    "score": {
+      "0": 9,
+      "1": 9
+    },
+    "stock_remaining": 0,
+    "hands": {
+      "0": [],
+      "1": []
+    },
+    "captured": {
+      "0": [
+        { "id": "tt0", "rank": "2", "suit": "OROS" },
+        { "id": "tt1", "rank": "3", "suit": "OROS" }
+      ],
+      "1": [
+        { "id": "tt2", "rank": "4", "suit": "OROS" },
+        { "id": "tt3", "rank": "5", "suit": "OROS" }
+      ]
+    },
+    "table": [],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "OROS"
+  },
+  "action": {
+    "type": "assert_deck"
+  },
+  "expected": {
+    "state": {
+      "dealer": 1,
+      "next_player": 0,
+      "score": {
+        "0": 9,
+        "1": 9
+      },
+      "stock_remaining": 0,
+      "hands": {
+        "0": [],
+        "1": []
+      },
+      "captured": {
+        "0": [
+          { "id": "tt0", "rank": "2", "suit": "OROS" },
+          { "id": "tt1", "rank": "3", "suit": "OROS" }
+        ],
+        "1": [
+          { "id": "tt2", "rank": "4", "suit": "OROS" },
+          { "id": "tt3", "rank": "5", "suit": "OROS" }
+        ]
+      },
+      "table": [],
+      "scopas": {
+        "0": 0,
+        "1": 0
+      },
+      "target_score": 15,
+      "scoring_suit": "OROS"
+    },
+    "assertions": {
+      "category": "majority_scoring_suit",
+      "majority_scoring_suit": {
+        "winner": null,
+        "player_suit_count": {
+          "0": 2,
+          "1": 2
+        }
+      },
+      "round_points": {
+        "0": 0,
+        "1": 0
+      }
+    }
+  }
+}

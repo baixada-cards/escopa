@@ -1,0 +1,79 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "rounds/end-round/no-capture-leftover-to-dealer",
+  "ruleset": "escopa-2p-v1",
+  "description": "If no captures occur in a round, leftover table cards are awarded to the dealer.",
+  "deck_type": "spanish",
+  "initial_state": {
+    "dealer": 0,
+    "next_player": 0,
+    "score": {
+      "0": 3,
+      "1": 1
+    },
+    "stock_remaining": 0,
+    "hands": {
+      "0": [
+        { "id": "r1p0h0", "rank": "K", "suit": "COPAS" }
+      ],
+      "1": []
+    },
+    "captured": {
+      "0": [],
+      "1": []
+    },
+    "table": [
+      { "id": "r1t0", "rank": "A", "suit": "COPAS" },
+      { "id": "r1t1", "rank": "2", "suit": "ESPADAS" },
+      { "id": "r1t2", "rank": "6", "suit": "BASTOS" }
+    ],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "OROS"
+  },
+  "action": {
+    "type": "play_card",
+    "player": 0,
+    "card_id": "r1p0h0"
+  },
+  "expected": {
+    "state": {
+      "dealer": 0,
+      "next_player": null,
+      "score": {
+        "0": 4,
+        "1": 1
+      },
+      "stock_remaining": 0,
+      "hands": {
+        "0": [],
+        "1": []
+      },
+      "captured": {
+        "0": [
+          { "id": "r1t0", "rank": "A", "suit": "COPAS" },
+          { "id": "r1t1", "rank": "2", "suit": "ESPADAS" },
+          { "id": "r1t2", "rank": "6", "suit": "BASTOS" },
+          { "id": "r1p0h0", "rank": "K", "suit": "COPAS" }
+        ],
+        "1": []
+      },
+      "table": [],
+      "scopas": {
+        "0": 0,
+        "1": 0
+      },
+      "target_score": 15,
+      "scoring_suit": "OROS",
+      "last_captor": null,
+      "round_complete": true,
+      "round_points": {
+        "0": 1,
+        "1": 0
+      }
+    }
+  }
+}

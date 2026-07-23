@@ -1,0 +1,92 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "scoring/majority-scoring-suit/french-majority-scoring-suit",
+  "ruleset": "escopa-2p-v1",
+  "description": "French deck scoring-suit majority is awarded by diamonds.",
+  "deck_type": "french",
+  "initial_state": {
+    "dealer": 0,
+    "next_player": 0,
+    "score": {
+      "0": 6,
+      "1": 5
+    },
+    "stock_remaining": 0,
+    "hands": {
+      "0": [],
+      "1": []
+    },
+    "captured": {
+      "0": [
+        { "id": "fm0", "rank": "A", "suit": "DIAMONDS" },
+        { "id": "fm1", "rank": "3", "suit": "DIAMONDS" },
+        { "id": "fm2", "rank": "Q", "suit": "DIAMONDS" },
+        { "id": "fm3", "rank": "J", "suit": "DIAMONDS" }
+      ],
+      "1": [
+        { "id": "fm4", "rank": "2", "suit": "DIAMONDS" },
+        { "id": "fm5", "rank": "5", "suit": "DIAMONDS" },
+        { "id": "fm6", "rank": "J", "suit": "HEARTS" }
+      ]
+    },
+    "table": [],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "DIAMONDS"
+  },
+  "action": {
+    "type": "assert_deck"
+  },
+  "expected": {
+    "state": {
+      "dealer": 0,
+      "next_player": 0,
+      "score": {
+        "0": 6,
+        "1": 5
+      },
+      "stock_remaining": 0,
+      "hands": {
+        "0": [],
+        "1": []
+      },
+      "captured": {
+        "0": [
+          { "id": "fm0", "rank": "A", "suit": "DIAMONDS" },
+          { "id": "fm1", "rank": "3", "suit": "DIAMONDS" },
+          { "id": "fm2", "rank": "Q", "suit": "DIAMONDS" },
+          { "id": "fm3", "rank": "J", "suit": "DIAMONDS" }
+        ],
+        "1": [
+          { "id": "fm4", "rank": "2", "suit": "DIAMONDS" },
+          { "id": "fm5", "rank": "5", "suit": "DIAMONDS" },
+          { "id": "fm6", "rank": "J", "suit": "HEARTS" }
+        ]
+      },
+      "table": [],
+      "scopas": {
+        "0": 0,
+        "1": 0
+      },
+      "target_score": 15,
+      "scoring_suit": "DIAMONDS"
+    },
+    "assertions": {
+      "category": "majority_scoring_suit",
+      "majority_scoring_suit": {
+        "winner": 0,
+        "player_suit_count": {
+          "0": 4,
+          "1": 2
+        }
+      },
+      "round_points": {
+        "0": 1,
+        "1": 0
+      }
+    }
+  }
+}

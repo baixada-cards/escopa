@@ -1,0 +1,42 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "invalid/impossible-mixed-deck-state",
+  "ruleset": "escopa-2p-v1",
+  "description": "Reject initial state with card suits not in selected deck type.",
+  "deck_type": "spanish",
+  "initial_state": {
+    "dealer": 0,
+    "next_player": 0,
+    "score": {
+      "0": 0,
+      "1": 0
+    },
+    "stock_remaining": 40,
+    "hands": {
+      "0": [
+        { "id": "x0", "rank": "A", "suit": "HEARTS" }
+      ],
+      "1": []
+    },
+    "captured": {
+      "0": [],
+      "1": []
+    },
+    "table": [],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "OROS"
+  },
+  "action": {
+    "type": "assert_deck"
+  },
+  "expected": {
+    "rejection": {
+      "category": "invalid_mixed_deck_state",
+      "message_contains": "invalid card suit for deck type spanish"
+    }
+  }
+}

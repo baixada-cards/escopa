@@ -1,0 +1,52 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "invalid/out-of-turn-play",
+  "ruleset": "escopa-2p-v1",
+  "description": "Reject play when the wrong player acts out of turn.",
+  "deck_type": "spanish",
+  "initial_state": {
+    "dealer": 0,
+    "next_player": 0,
+    "score": {
+      "0": 0,
+      "1": 0
+    },
+    "stock_remaining": 33,
+    "hands": {
+      "0": [
+        { "id": "o0p0", "rank": "Q", "suit": "OROS" },
+        { "id": "o0p0b", "rank": "A", "suit": "COPAS" },
+        { "id": "o0p0c", "rank": "4", "suit": "ESPADAS" }
+      ],
+      "1": [
+        { "id": "o0p1", "rank": "6", "suit": "BASTOS" },
+        { "id": "o0p1b", "rank": "7", "suit": "OROS" },
+        { "id": "o0p1c", "rank": "K", "suit": "COPAS" }
+      ]
+    },
+    "captured": {
+      "0": [],
+      "1": []
+    },
+    "table": [
+      { "id": "o0t0", "rank": "A", "suit": "OROS" }
+    ],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "OROS"
+  },
+  "action": {
+    "type": "play_card",
+    "player": 1,
+    "card_id": "o0p1"
+  },
+  "expected": {
+    "rejection": {
+      "category": "out_of_turn_play",
+      "message_contains": "expected player 0"
+    }
+  }
+}

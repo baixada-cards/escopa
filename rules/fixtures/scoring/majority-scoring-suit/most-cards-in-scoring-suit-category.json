@@ -1,0 +1,94 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "scoring/majority-scoring-suit/most-cards-in-scoring-suit-category",
+  "ruleset": "escopa-2p-v1",
+  "description": "Player with the most cards in the scoring suit earns one point.",
+  "deck_type": "spanish",
+  "initial_state": {
+    "dealer": 0,
+    "next_player": 1,
+    "score": {
+      "0": 8,
+      "1": 7
+    },
+    "stock_remaining": 0,
+    "hands": {
+      "0": [],
+      "1": []
+    },
+    "captured": {
+      "0": [
+        { "id": "ms0", "rank": "2", "suit": "OROS" },
+        { "id": "ms1", "rank": "3", "suit": "OROS" },
+        { "id": "ms2", "rank": "4", "suit": "OROS" },
+        { "id": "ms3", "rank": "5", "suit": "COPAS" }
+      ],
+      "1": [
+        { "id": "ms4", "rank": "2", "suit": "COPAS" },
+        { "id": "ms5", "rank": "3", "suit": "ESPADAS" },
+        { "id": "ms6", "rank": "4", "suit": "BASTOS" },
+        { "id": "ms7", "rank": "5", "suit": "BASTOS" }
+      ]
+    },
+    "table": [],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "OROS"
+  },
+  "action": {
+    "type": "assert_deck"
+  },
+  "expected": {
+    "state": {
+      "dealer": 0,
+      "next_player": 1,
+      "score": {
+        "0": 8,
+        "1": 7
+      },
+      "stock_remaining": 0,
+      "hands": {
+        "0": [],
+        "1": []
+      },
+      "captured": {
+        "0": [
+          { "id": "ms0", "rank": "2", "suit": "OROS" },
+          { "id": "ms1", "rank": "3", "suit": "OROS" },
+          { "id": "ms2", "rank": "4", "suit": "OROS" },
+          { "id": "ms3", "rank": "5", "suit": "COPAS" }
+        ],
+        "1": [
+          { "id": "ms4", "rank": "2", "suit": "COPAS" },
+          { "id": "ms5", "rank": "3", "suit": "ESPADAS" },
+          { "id": "ms6", "rank": "4", "suit": "BASTOS" },
+          { "id": "ms7", "rank": "5", "suit": "BASTOS" }
+        ]
+      },
+      "table": [],
+      "scopas": {
+        "0": 0,
+        "1": 0
+      },
+      "target_score": 15,
+      "scoring_suit": "OROS"
+    },
+    "assertions": {
+      "category": "majority_scoring_suit",
+      "majority_scoring_suit": {
+        "winner": 0,
+        "player_suit_count": {
+          "0": 3,
+          "1": 0
+        }
+      },
+      "round_points": {
+        "0": 1,
+        "1": 0
+      }
+    }
+  }
+}

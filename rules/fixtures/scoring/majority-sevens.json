@@ -1,0 +1,88 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "scoring/majority-sevens/most-sevens-category",
+  "ruleset": "escopa-2p-v1",
+  "description": "Majority of captured 7s scores one point.",
+  "deck_type": "spanish",
+  "initial_state": {
+    "dealer": 1,
+    "next_player": 0,
+    "score": {
+      "0": 9,
+      "1": 7
+    },
+    "stock_remaining": 0,
+    "hands": {
+      "0": [],
+      "1": []
+    },
+    "captured": {
+      "0": [
+        { "id": "ms0", "rank": "7", "suit": "OROS" },
+        { "id": "ms1", "rank": "7", "suit": "COPAS" },
+        { "id": "ms2", "rank": "7", "suit": "ESPADAS" },
+        { "id": "ms3", "rank": "K", "suit": "OROS" }
+      ],
+      "1": [
+        { "id": "ms4", "rank": "7", "suit": "BASTOS" },
+        { "id": "ms5", "rank": "Q", "suit": "OROS" },
+        { "id": "ms6", "rank": "A", "suit": "COPAS" }
+      ]
+    },
+    "table": [],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "OROS"
+  },
+  "action": {
+    "type": "assert_deck"
+  },
+  "expected": {
+    "state": {
+      "dealer": 1,
+      "next_player": 0,
+      "score": {
+        "0": 9,
+        "1": 7
+      },
+      "stock_remaining": 0,
+      "hands": {
+        "0": [],
+        "1": []
+      },
+      "captured": {
+        "0": [
+          { "id": "ms0", "rank": "7", "suit": "OROS" },
+          { "id": "ms1", "rank": "7", "suit": "COPAS" },
+          { "id": "ms2", "rank": "7", "suit": "ESPADAS" },
+          { "id": "ms3", "rank": "K", "suit": "OROS" }
+        ],
+        "1": [
+          { "id": "ms4", "rank": "7", "suit": "BASTOS" },
+          { "id": "ms5", "rank": "Q", "suit": "OROS" },
+          { "id": "ms6", "rank": "A", "suit": "COPAS" }
+        ]
+      },
+      "table": [],
+      "scopas": {
+        "0": 0,
+        "1": 0
+      },
+      "target_score": 15,
+      "scoring_suit": "OROS"
+    },
+    "assertions": {
+      "category": "majority_sevens",
+      "majority_sevens": {
+        "winner": 0,
+        "counts": {
+          "0": 3,
+          "1": 1
+        }
+      }
+    }
+  }
+}

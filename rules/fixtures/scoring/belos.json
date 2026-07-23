@@ -1,0 +1,89 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "scoring/belos/first-player-captures-belos",
+  "ruleset": "escopa-2p-v1",
+  "description": "Belo scoring awards one point for each belo captured: A,7,Q,K of scoring suit.",
+  "deck_type": "spanish",
+  "initial_state": {
+    "dealer": 1,
+    "next_player": 0,
+    "score": {
+      "0": 5,
+      "1": 4
+    },
+    "stock_remaining": 0,
+    "hands": {
+      "0": [],
+      "1": []
+    },
+    "captured": {
+      "0": [
+        { "id": "b0", "rank": "A", "suit": "OROS" },
+        { "id": "b1", "rank": "7", "suit": "OROS" },
+        { "id": "b2", "rank": "Q", "suit": "OROS" },
+        { "id": "b3", "rank": "K", "suit": "OROS" },
+        { "id": "b4", "rank": "6", "suit": "COPAS" }
+      ],
+      "1": [
+        { "id": "b5", "rank": "A", "suit": "COPAS" },
+        { "id": "b6", "rank": "7", "suit": "COPAS" }
+      ]
+    },
+    "table": [],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "OROS"
+  },
+  "action": {
+    "type": "assert_deck"
+  },
+  "expected": {
+    "state": {
+      "dealer": 1,
+      "next_player": 0,
+      "score": {
+        "0": 5,
+        "1": 4
+      },
+      "stock_remaining": 0,
+      "hands": {
+        "0": [],
+        "1": []
+      },
+      "captured": {
+        "0": [
+          { "id": "b0", "rank": "A", "suit": "OROS" },
+          { "id": "b1", "rank": "7", "suit": "OROS" },
+          { "id": "b2", "rank": "Q", "suit": "OROS" },
+          { "id": "b3", "rank": "K", "suit": "OROS" },
+          { "id": "b4", "rank": "6", "suit": "COPAS" }
+        ],
+        "1": [
+          { "id": "b5", "rank": "A", "suit": "COPAS" },
+          { "id": "b6", "rank": "7", "suit": "COPAS" }
+        ]
+      },
+      "table": [],
+      "scopas": {
+        "0": 0,
+        "1": 0
+      },
+      "target_score": 15,
+      "scoring_suit": "OROS"
+    },
+    "assertions": {
+      "category": "belos",
+      "belos": {
+        "0": 4,
+        "1": 0
+      },
+      "round_points": {
+        "0": 4,
+        "1": 0
+      }
+    }
+  }
+}

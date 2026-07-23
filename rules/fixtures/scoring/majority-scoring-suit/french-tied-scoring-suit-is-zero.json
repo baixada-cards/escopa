@@ -1,0 +1,86 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "scoring/majority-scoring-suit/french-tied-scoring-suit-is-zero",
+  "ruleset": "escopa-2p-v1",
+  "description": "A tie for French diamonds scoring-suit majority awards zero points.",
+  "deck_type": "french",
+  "initial_state": {
+    "dealer": 1,
+    "next_player": 1,
+    "score": {
+      "0": 9,
+      "1": 9
+    },
+    "stock_remaining": 0,
+    "hands": {
+      "0": [],
+      "1": []
+    },
+    "captured": {
+      "0": [
+        { "id": "ft0", "rank": "A", "suit": "DIAMONDS" },
+        { "id": "ft1", "rank": "3", "suit": "DIAMONDS" }
+      ],
+      "1": [
+        { "id": "ft2", "rank": "4", "suit": "DIAMONDS" },
+        { "id": "ft3", "rank": "5", "suit": "DIAMONDS" }
+      ]
+    },
+    "table": [],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "DIAMONDS"
+  },
+  "action": {
+    "type": "assert_deck"
+  },
+  "expected": {
+    "state": {
+      "dealer": 1,
+      "next_player": 1,
+      "score": {
+        "0": 9,
+        "1": 9
+      },
+      "stock_remaining": 0,
+      "hands": {
+        "0": [],
+        "1": []
+      },
+      "captured": {
+        "0": [
+          { "id": "ft0", "rank": "A", "suit": "DIAMONDS" },
+          { "id": "ft1", "rank": "3", "suit": "DIAMONDS" }
+        ],
+        "1": [
+          { "id": "ft2", "rank": "4", "suit": "DIAMONDS" },
+          { "id": "ft3", "rank": "5", "suit": "DIAMONDS" }
+        ]
+      },
+      "table": [],
+      "scopas": {
+        "0": 0,
+        "1": 0
+      },
+      "target_score": 15,
+      "scoring_suit": "DIAMONDS"
+    },
+    "assertions": {
+      "category": "majority_scoring_suit",
+      "majority_scoring_suit": {
+        "winner": null,
+        "player_suit_count": {
+          "0": 2,
+          "1": 2
+        }
+      },
+      "round_points": {
+        "0": 0,
+        "1": 0
+      }
+    }
+  }
+}

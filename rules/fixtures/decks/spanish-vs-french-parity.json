@@ -1,0 +1,82 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "decks/spanish-vs-french-parity/spanish-40",
+  "ruleset": "escopa-2p-v1",
+  "description": "Spanish deck shape uses oros/copas/espadas/bastos suits and 40 cards.",
+  "deck_type": "spanish",
+  "initial_state": {
+    "dealer": 0,
+    "next_player": 0,
+    "score": {
+      "0": 0,
+      "1": 0
+    },
+    "stock_remaining": 40,
+    "hands": {
+      "0": [],
+      "1": []
+    },
+    "captured": {
+      "0": [],
+      "1": []
+    },
+    "table": [],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "OROS"
+  },
+  "action": {
+    "type": "assert_deck"
+  },
+  "expected": {
+    "state": {
+      "dealer": 0,
+      "next_player": 0,
+      "score": {
+        "0": 0,
+        "1": 0
+      },
+      "stock_remaining": 40,
+      "hands": {
+        "0": [],
+        "1": []
+      },
+      "captured": {
+        "0": [],
+        "1": []
+      },
+      "table": [],
+      "scopas": {
+        "0": 0,
+        "1": 0
+      },
+      "target_score": 15,
+      "scoring_suit": "OROS"
+    },
+    "assertions": {
+      "deck_suits": [
+        "OROS",
+        "COPAS",
+        "ESPADAS",
+        "BASTOS"
+      ],
+      "deck_ranks": [
+        "A",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "Q",
+        "J",
+        "K"
+      ],
+      "deck_card_count": 40,
+      "scoring_suit": "OROS"
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "scopas/initial-table/partitioned-table-captures-2-scopas",
+  "ruleset": "escopa-2p-v1",
+  "description": "Initial four-card table can be partitioned into two 15-sum subsets, awarding two scopas.",
+  "deck_type": "spanish",
+  "initial_state": {
+    "dealer": 1,
+    "next_player": 1,
+    "score": {
+      "0": 0,
+      "1": 0
+    },
+    "stock_remaining": 30,
+    "hands": {
+      "0": [
+        { "id": "pi0p0", "rank": "Q", "suit": "OROS" },
+        { "id": "pi0p1", "rank": "4", "suit": "COPAS" },
+        { "id": "pi0p2", "rank": "A", "suit": "ESPADAS" }
+      ],
+      "1": [
+        { "id": "pi1p0", "rank": "7", "suit": "COPAS" },
+        { "id": "pi1p1", "rank": "6", "suit": "BASTOS" },
+        { "id": "pi1p2", "rank": "K", "suit": "OROS" }
+      ]
+    },
+    "captured": {
+      "0": [],
+      "1": []
+    },
+    "table": [
+      { "id": "pi0t0", "rank": "5", "suit": "OROS" },
+      { "id": "pi0t1", "rank": "K", "suit": "COPAS" },
+      { "id": "pi0t2", "rank": "6", "suit": "ESPADAS" },
+      { "id": "pi0t3", "rank": "J", "suit": "BASTOS" }
+    ],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "OROS"
+  },
+  "action": {
+    "type": "resolve_initial_table"
+  },
+  "expected": {
+    "state": {
+      "dealer": 1,
+      "next_player": 0,
+      "score": {
+        "0": 0,
+        "1": 0
+      },
+      "stock_remaining": 30,
+      "hands": {
+        "0": [
+          { "id": "pi0p0", "rank": "Q", "suit": "OROS" },
+          { "id": "pi0p1", "rank": "4", "suit": "COPAS" },
+          { "id": "pi0p2", "rank": "A", "suit": "ESPADAS" }
+        ],
+        "1": [
+          { "id": "pi1p0", "rank": "7", "suit": "COPAS" },
+          { "id": "pi1p1", "rank": "6", "suit": "BASTOS" },
+          { "id": "pi1p2", "rank": "K", "suit": "OROS" }
+        ]
+      },
+      "captured": {
+        "0": [],
+        "1": [
+          { "id": "pi0t0", "rank": "5", "suit": "OROS" },
+          { "id": "pi0t1", "rank": "K", "suit": "COPAS" },
+          { "id": "pi0t2", "rank": "6", "suit": "ESPADAS" },
+          { "id": "pi0t3", "rank": "J", "suit": "BASTOS" }
+        ]
+      },
+      "table": [],
+      "scopas": {
+        "0": 0,
+        "1": 2
+      },
+      "target_score": 15,
+      "scoring_suit": "OROS",
+      "last_captor": 1
+    }
+  }
+}

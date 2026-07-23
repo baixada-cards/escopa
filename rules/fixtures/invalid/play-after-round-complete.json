@@ -1,0 +1,54 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "invalid/play-after-round-complete",
+  "ruleset": "escopa-2p-v1",
+  "description": "Reject play actions when the round has already completed.",
+  "deck_type": "spanish",
+  "initial_state": {
+    "dealer": 0,
+    "next_player": null,
+    "score": {
+      "0": 3,
+      "1": 2
+    },
+    "stock_remaining": 0,
+    "hands": {
+      "0": [
+        { "id": "r0", "rank": "K", "suit": "OROS" }
+      ],
+      "1": [
+        { "id": "r1", "rank": "7", "suit": "COPAS" }
+      ]
+    },
+    "captured": {
+      "0": [],
+      "1": []
+    },
+    "table": [
+      { "id": "r2", "rank": "A", "suit": "ESPADAS" }
+    ],
+    "scopas": {
+      "0": 0,
+      "1": 1
+    },
+    "target_score": 15,
+    "scoring_suit": "OROS",
+    "round_complete": true,
+    "match_complete": true,
+    "round_points": {
+      "0": 1,
+      "1": 0
+    }
+  },
+  "action": {
+    "type": "play_card",
+    "player": 0,
+    "card_id": "r0"
+  },
+  "expected": {
+    "rejection": {
+      "category": "play_after_round_completion",
+      "message_contains": "round already complete"
+    }
+  }
+}

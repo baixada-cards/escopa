@@ -1,0 +1,54 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "invalid/duplicate-captured-id",
+  "ruleset": "escopa-2p-v1",
+  "description": "Reject duplicate captured card IDs in one action.",
+  "deck_type": "spanish",
+  "initial_state": {
+    "dealer": 0,
+    "next_player": 0,
+    "score": {
+      "0": 0,
+      "1": 0
+    },
+    "stock_remaining": 30,
+    "hands": {
+      "0": [
+        { "id": "d0p0", "rank": "J", "suit": "OROS" },
+        { "id": "d0p0b", "rank": "A", "suit": "COPAS" },
+        { "id": "d0p0c", "rank": "2", "suit": "ESPADAS" }
+      ],
+      "1": [
+        { "id": "d0p1", "rank": "K", "suit": "BASTOS" },
+        { "id": "d0p1b", "rank": "6", "suit": "OROS" },
+        { "id": "d0p1c", "rank": "4", "suit": "COPAS" }
+      ]
+    },
+    "captured": {
+      "0": [],
+      "1": []
+    },
+    "table": [
+      { "id": "d0t0", "rank": "A", "suit": "OROS" },
+      { "id": "d0t1", "rank": "Q", "suit": "COPAS" }
+    ],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "OROS"
+  },
+  "action": {
+    "type": "play_card",
+    "player": 0,
+    "card_id": "d0p0",
+    "captured_card_ids": ["d0t0", "d0t0"]
+  },
+  "expected": {
+    "rejection": {
+      "category": "captured_card_id_duplicate",
+      "message_contains": "duplicate captured card id d0t0"
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "rounds/end-round/no-capture-leftover-to-dealer-french",
+  "ruleset": "escopa-2p-v1",
+  "description": "If a French deck round ends without captures, leftover table cards are awarded to the dealer.",
+  "deck_type": "french",
+  "initial_state": {
+    "dealer": 0,
+    "next_player": 0,
+    "score": {
+      "0": 3,
+      "1": 1
+    },
+    "stock_remaining": 0,
+    "hands": {
+      "0": [
+        { "id": "fr0p0h0", "rank": "K", "suit": "DIAMONDS" }
+      ],
+      "1": []
+    },
+    "captured": {
+      "0": [],
+      "1": []
+    },
+    "table": [
+      { "id": "fr0t0", "rank": "A", "suit": "DIAMONDS" },
+      { "id": "fr0t1", "rank": "2", "suit": "HEARTS" },
+      { "id": "fr0t2", "rank": "6", "suit": "SPADES" }
+    ],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "DIAMONDS"
+  },
+  "action": {
+    "type": "play_card",
+    "player": 0,
+    "card_id": "fr0p0h0"
+  },
+  "expected": {
+    "state": {
+      "dealer": 0,
+      "next_player": null,
+      "score": {
+        "0": 7,
+        "1": 1
+      },
+      "stock_remaining": 0,
+      "hands": {
+        "0": [],
+        "1": []
+      },
+      "captured": {
+        "0": [
+          { "id": "fr0t0", "rank": "A", "suit": "DIAMONDS" },
+          { "id": "fr0t1", "rank": "2", "suit": "HEARTS" },
+          { "id": "fr0t2", "rank": "6", "suit": "SPADES" },
+          { "id": "fr0p0h0", "rank": "K", "suit": "DIAMONDS" }
+        ],
+        "1": []
+      },
+      "table": [],
+      "scopas": {
+        "0": 0,
+        "1": 0
+      },
+      "target_score": 15,
+      "scoring_suit": "DIAMONDS",
+      "last_captor": null,
+      "round_complete": true,
+      "match_complete": false,
+      "round_points": {
+        "0": 4,
+        "1": 0
+      }
+    }
+  }
+}

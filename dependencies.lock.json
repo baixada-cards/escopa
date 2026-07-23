@@ -1,0 +1,9 @@
+{
+  "design_system": {
+    "commit": "82638b7cdabbb56a4bce7b953e8571847bf6fda9",
+    "package": "@baixada-cards/design-system",
+    "repository": "https://github.com/baixada-cards/design-system.git",
+    "version": "0.1.0"
+  },
+  "format": "baixada-dependency-lock/v1"
+}

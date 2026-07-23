@@ -1,0 +1,93 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "captures/multiple-capture-choices/player-selects",
+  "ruleset": "escopa-2p-v1",
+  "description": "A played card may choose between multiple legal capture sets; choice is player-driven.",
+  "deck_type": "spanish",
+  "initial_state": {
+    "dealer": 0,
+    "next_player": 0,
+    "score": {
+      "0": 0,
+      "1": 0
+    },
+    "stock_remaining": 24,
+    "hands": {
+      "0": [
+        { "id": "c0p0h0", "rank": "5", "suit": "OROS" },
+        { "id": "c0p0h1", "rank": "J", "suit": "COPAS" },
+        { "id": "c0p0h2", "rank": "3", "suit": "ESPADAS" }
+      ],
+      "1": [
+        { "id": "c0p1h0", "rank": "Q", "suit": "BASTOS" },
+        { "id": "c0p1h1", "rank": "2", "suit": "OROS" },
+        { "id": "c0p1h2", "rank": "6", "suit": "COPAS" }
+      ]
+    },
+    "captured": {
+      "0": [],
+      "1": []
+    },
+    "table": [
+      { "id": "c0t0", "rank": "Q", "suit": "ESPADAS" },
+      { "id": "c0t1", "rank": "2", "suit": "BASTOS" },
+      { "id": "c0t2", "rank": "4", "suit": "OROS" },
+      { "id": "c0t3", "rank": "7", "suit": "ESPADAS" },
+      { "id": "c0t4", "rank": "A", "suit": "COPAS" }
+    ],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "OROS"
+  },
+  "action": {
+    "type": "play_card",
+    "player": 0,
+    "card_id": "c0p0h0",
+    "captured_card_ids": ["c0t0", "c0t1"]
+  },
+  "expected": {
+    "state": {
+      "dealer": 0,
+      "next_player": 1,
+      "score": {
+        "0": 0,
+        "1": 0
+      },
+      "stock_remaining": 24,
+      "hands": {
+        "0": [
+          { "id": "c0p0h1", "rank": "J", "suit": "COPAS" },
+          { "id": "c0p0h2", "rank": "3", "suit": "ESPADAS" }
+        ],
+        "1": [
+          { "id": "c0p1h0", "rank": "Q", "suit": "BASTOS" },
+          { "id": "c0p1h1", "rank": "2", "suit": "OROS" },
+          { "id": "c0p1h2", "rank": "6", "suit": "COPAS" }
+        ]
+      },
+      "captured": {
+        "0": [
+          { "id": "c0p0h0", "rank": "5", "suit": "OROS" },
+          { "id": "c0t0", "rank": "Q", "suit": "ESPADAS" },
+          { "id": "c0t1", "rank": "2", "suit": "BASTOS" }
+        ],
+        "1": []
+      },
+      "table": [
+        { "id": "c0t2", "rank": "4", "suit": "OROS" },
+        { "id": "c0t3", "rank": "7", "suit": "ESPADAS" },
+        { "id": "c0t4", "rank": "A", "suit": "COPAS" }
+      ],
+      "scopas": {
+        "0": 0,
+        "1": 0
+      },
+      "target_score": 15,
+      "scoring_suit": "OROS",
+      "last_captor": 0
+    }
+  }
+}

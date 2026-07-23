@@ -1,0 +1,286 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://baixada.cards/schemas/escopa-fixture-v1.json",
+  "title": "EscopaFixture",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "fixture_version",
+    "id",
+    "ruleset",
+    "description",
+    "deck_type",
+    "initial_state",
+    "action",
+    "expected"
+  ],
+  "properties": {
+    "fixture_version": {
+      "type": "string",
+      "const": "escopa-fixture/v1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+(?:/[a-z0-9-]+)+$"
+    },
+    "ruleset": {
+      "type": "string",
+      "const": "escopa-2p-v1"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "deck_type": {
+      "type": "string",
+      "enum": [
+        "spanish",
+        "french"
+      ]
+    },
+    "initial_state": {
+      "$ref": "#/$defs/state"
+    },
+    "action": {
+      "$ref": "#/$defs/action"
+    },
+    "expected": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "state": {
+          "$ref": "#/$defs/state"
+        },
+        "assertions": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "deck_suits": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "string" }
+            },
+            "deck_ranks": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "string" }
+            },
+            "deck_card_count": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "scoring_suit": { "type": "string" },
+            "card_values": {
+              "type": "object",
+              "additionalProperties": { "type": "integer" }
+            },
+            "round_points": {
+              "$ref": "#/$defs/scoreMap"
+            },
+            "match_end": {
+              "type": "boolean"
+            },
+            "round_end": {
+              "type": "boolean"
+            }
+          },
+          "patternProperties": {
+            "^[a-z_]+$": {
+              "type": ["string", "integer", "boolean", "object", "array", "null"]
+            }
+          }
+        }
+        ,
+        "rejection": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["category"],
+          "properties": {
+            "category": {
+              "type": "string",
+              "pattern": "^[a-z_]+$"
+            },
+            "message_contains": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "oneOf": [
+        {
+          "required": ["state"]
+        },
+        {
+          "required": ["assertions"]
+        },
+        {
+          "required": ["rejection"]
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "suit": {
+      "type": "string",
+      "enum": [
+        "OROS",
+        "COPAS",
+        "ESPADAS",
+        "BASTOS",
+        "DIAMONDS",
+        "HEARTS",
+        "SPADES",
+        "CLUBS"
+      ]
+    },
+    "rank": {
+      "type": "string",
+      "enum": [
+        "A",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "Q",
+        "J",
+        "K"
+      ]
+    },
+    "card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "rank",
+        "suit"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[A-Za-z0-9_-]+$" },
+        "rank": { "$ref": "#/$defs/rank" },
+        "suit": { "$ref": "#/$defs/suit" }
+      }
+    },
+    "playerCards": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "0",
+        "1"
+      ],
+      "properties": {
+        "0": {
+          "type": "array",
+          "maxItems": 3,
+          "items": { "$ref": "#/$defs/card" }
+        },
+        "1": {
+          "type": "array",
+          "maxItems": 3,
+          "items": { "$ref": "#/$defs/card" }
+        }
+      }
+    },
+    "playerCapturePiles": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["0", "1"],
+      "properties": {
+        "0": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/card" }
+        },
+        "1": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/card" }
+        }
+      }
+    },
+    "scoreMap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["0", "1"],
+      "properties": {
+        "0": { "type": "integer", "minimum": 0 },
+        "1": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dealer",
+        "next_player",
+        "score",
+        "stock_remaining",
+        "hands",
+        "captured",
+        "table",
+        "scopas",
+        "target_score",
+        "scoring_suit"
+      ],
+      "properties": {
+        "dealer": { "type": "integer", "enum": [0, 1] },
+        "next_player": {
+          "type": ["integer", "null"],
+          "enum": [0, 1, null]
+        },
+        "score": { "$ref": "#/$defs/scoreMap" },
+        "stock_remaining": { "type": "integer", "minimum": 0 },
+        "hands": { "$ref": "#/$defs/playerCards" },
+        "captured": { "$ref": "#/$defs/playerCapturePiles" },
+        "table": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/card" }
+        },
+        "scopas": { "$ref": "#/$defs/scoreMap" },
+        "target_score": { "type": "integer", "minimum": 1 },
+        "scoring_suit": {
+          "type": "string",
+          "enum": ["OROS", "DIAMONDS"]
+        },
+        "last_captor": {
+          "type": ["integer", "null"],
+          "enum": [0, 1, null]
+        },
+        "round_complete": {
+          "type": "boolean"
+        },
+        "match_complete": {
+          "type": "boolean"
+        },
+        "round_points": { "$ref": "#/$defs/scoreMap" }
+      }
+    },
+    "action": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "player", "card_id"],
+          "properties": {
+            "type": { "const": "play_card" },
+            "player": { "type": "integer", "enum": [0, 1] },
+            "card_id": { "type": "string", "pattern": "^[A-Za-z0-9_-]+$" },
+            "captured_card_ids": {
+              "type": "array",
+              "items": { "type": "string", "pattern": "^[A-Za-z0-9_-]+$" },
+              "uniqueItems": true
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type"],
+          "properties": {
+            "type": { "enum": ["assert_deck", "resolve_initial_table"] }
+          }
+        }
+      ]
+    }
+  }
+}

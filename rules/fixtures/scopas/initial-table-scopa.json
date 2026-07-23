@@ -1,0 +1,91 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "scopas/initial-table/scopa-on-open",
+  "ruleset": "escopa-2p-v1",
+  "description": "Initial table total of 15 is captured by dealer as pre-play scopas.",
+  "deck_type": "spanish",
+  "initial_state": {
+    "dealer": 0,
+    "next_player": 0,
+    "score": {
+      "0": 0,
+      "1": 0
+    },
+    "stock_remaining": 30,
+    "hands": {
+      "0": [
+        { "id": "i0p0h0", "rank": "2", "suit": "OROS" },
+        { "id": "i0p0h1", "rank": "4", "suit": "COPAS" },
+        { "id": "i0p0h2", "rank": "A", "suit": "ESPADAS" }
+      ],
+      "1": [
+        { "id": "i0p1h0", "rank": "7", "suit": "COPAS" },
+        { "id": "i0p1h1", "rank": "6", "suit": "BASTOS" },
+        { "id": "i0p1h2", "rank": "K", "suit": "OROS" }
+      ]
+    },
+    "captured": {
+      "0": [],
+      "1": []
+    },
+    "table": [
+      { "id": "i0t0", "rank": "A", "suit": "OROS" },
+      { "id": "i0t1", "rank": "4", "suit": "OROS" },
+      { "id": "i0t2", "rank": "5", "suit": "OROS" },
+      { "id": "i0t3", "rank": "5", "suit": "COPAS" }
+    ],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "OROS"
+  },
+  "action": {
+    "type": "resolve_initial_table"
+  },
+  "expected": {
+    "state": {
+      "dealer": 0,
+      "next_player": 1,
+      "score": {
+        "0": 0,
+        "1": 0
+      },
+      "stock_remaining": 30,
+      "hands": {
+        "0": [
+          { "id": "i0p0h0", "rank": "2", "suit": "OROS" },
+          { "id": "i0p0h1", "rank": "4", "suit": "COPAS" },
+          { "id": "i0p0h2", "rank": "A", "suit": "ESPADAS" }
+        ],
+        "1": [
+          { "id": "i0p1h0", "rank": "7", "suit": "COPAS" },
+          { "id": "i0p1h1", "rank": "6", "suit": "BASTOS" },
+          { "id": "i0p1h2", "rank": "K", "suit": "OROS" }
+        ]
+      },
+      "captured": {
+        "0": [
+          { "id": "i0t0", "rank": "A", "suit": "OROS" },
+          { "id": "i0t1", "rank": "4", "suit": "OROS" },
+          { "id": "i0t2", "rank": "5", "suit": "OROS" },
+          { "id": "i0t3", "rank": "5", "suit": "COPAS" }
+        ],
+        "1": []
+      },
+      "table": [],
+      "scopas": {
+        "0": 1,
+        "1": 0
+      },
+      "target_score": 15,
+      "scoring_suit": "OROS",
+      "last_captor": 0
+    },
+    "assertions": {
+      "round_end": false,
+      "match_end": false
+    }
+  }
+}

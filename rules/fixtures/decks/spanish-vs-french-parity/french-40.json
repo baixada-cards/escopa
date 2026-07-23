@@ -1,0 +1,82 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "decks/spanish-vs-french-parity/french-40",
+  "ruleset": "escopa-2p-v1",
+  "description": "French-style deck uses diamonds/hearts/spades/clubs suits and 40 cards.",
+  "deck_type": "french",
+  "initial_state": {
+    "dealer": 1,
+    "next_player": 1,
+    "score": {
+      "0": 0,
+      "1": 0
+    },
+    "stock_remaining": 40,
+    "hands": {
+      "0": [],
+      "1": []
+    },
+    "captured": {
+      "0": [],
+      "1": []
+    },
+    "table": [],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "DIAMONDS"
+  },
+  "action": {
+    "type": "assert_deck"
+  },
+  "expected": {
+    "state": {
+      "dealer": 1,
+      "next_player": 1,
+      "score": {
+        "0": 0,
+        "1": 0
+      },
+      "stock_remaining": 40,
+      "hands": {
+        "0": [],
+        "1": []
+      },
+      "captured": {
+        "0": [],
+        "1": []
+      },
+      "table": [],
+      "scopas": {
+        "0": 0,
+        "1": 0
+      },
+      "target_score": 15,
+      "scoring_suit": "DIAMONDS"
+    },
+    "assertions": {
+      "deck_suits": [
+        "DIAMONDS",
+        "HEARTS",
+        "SPADES",
+        "CLUBS"
+      ],
+      "deck_ranks": [
+        "A",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "Q",
+        "J",
+        "K"
+      ],
+      "deck_card_count": 40,
+      "scoring_suit": "DIAMONDS"
+    }
+  }
+}

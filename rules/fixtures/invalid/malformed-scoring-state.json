@@ -1,0 +1,40 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "invalid/malformed-scoring-state",
+  "ruleset": "escopa-2p-v1",
+  "description": "Reject initial state where scoring suit does not match deck type.",
+  "deck_type": "spanish",
+  "initial_state": {
+    "dealer": 1,
+    "next_player": 1,
+    "score": {
+      "0": 0,
+      "1": 0
+    },
+    "stock_remaining": 40,
+    "hands": {
+      "0": [],
+      "1": []
+    },
+    "captured": {
+      "0": [],
+      "1": []
+    },
+    "table": [],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "DIAMONDS"
+  },
+  "action": {
+    "type": "assert_deck"
+  },
+  "expected": {
+    "rejection": {
+      "category": "invalid_scoring_state",
+      "message_contains": "invalid scoring_suit for deck type spanish"
+    }
+  }
+}

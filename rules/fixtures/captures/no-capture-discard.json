@@ -1,0 +1,86 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "captures/no-capture/discard-to-table",
+  "ruleset": "escopa-2p-v1",
+  "description": "When no capture is possible, played card is discarded to table.",
+  "deck_type": "spanish",
+  "initial_state": {
+    "dealer": 1,
+    "next_player": 0,
+    "score": {
+      "0": 0,
+      "1": 0
+    },
+    "stock_remaining": 34,
+    "hands": {
+      "0": [
+        { "id": "s1p0h0", "rank": "K", "suit": "COPAS" },
+        { "id": "s1p0h1", "rank": "2", "suit": "OROS" },
+        { "id": "s1p0h2", "rank": "4", "suit": "BASTOS" }
+      ],
+      "1": [
+        { "id": "s1p1h0", "rank": "5", "suit": "OROS" },
+        { "id": "s1p1h1", "rank": "3", "suit": "ESPADAS" },
+        { "id": "s1p1h2", "rank": "7", "suit": "BASTOS" }
+      ]
+    },
+    "captured": {
+      "0": [],
+      "1": []
+    },
+    "table": [
+      { "id": "s1t0", "rank": "A", "suit": "OROS" },
+      { "id": "s1t1", "rank": "6", "suit": "ESPADAS" },
+      { "id": "s1t2", "rank": "2", "suit": "COPAS" }
+    ],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "OROS"
+  },
+  "action": {
+    "type": "play_card",
+    "player": 0,
+    "card_id": "s1p0h0"
+  },
+  "expected": {
+    "state": {
+      "dealer": 1,
+      "next_player": 1,
+      "score": {
+        "0": 0,
+        "1": 0
+      },
+      "stock_remaining": 34,
+      "hands": {
+        "0": [
+          { "id": "s1p0h1", "rank": "2", "suit": "OROS" },
+          { "id": "s1p0h2", "rank": "4", "suit": "BASTOS" }
+        ],
+        "1": [
+          { "id": "s1p1h0", "rank": "5", "suit": "OROS" },
+          { "id": "s1p1h1", "rank": "3", "suit": "ESPADAS" },
+          { "id": "s1p1h2", "rank": "7", "suit": "BASTOS" }
+        ]
+      },
+      "captured": {
+        "0": [],
+        "1": []
+      },
+      "table": [
+        { "id": "s1t0", "rank": "A", "suit": "OROS" },
+        { "id": "s1t1", "rank": "6", "suit": "ESPADAS" },
+        { "id": "s1t2", "rank": "2", "suit": "COPAS" },
+        { "id": "s1p0h0", "rank": "K", "suit": "COPAS" }
+      ],
+      "scopas": {
+        "0": 0,
+        "1": 0
+      },
+      "target_score": 15,
+      "scoring_suit": "OROS"
+    }
+  }
+}

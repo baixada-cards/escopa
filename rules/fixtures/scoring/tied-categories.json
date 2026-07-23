@@ -1,0 +1,85 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "scoring/tied-categories/no-point-on-ties",
+  "ruleset": "escopa-2p-v1",
+  "description": "Tied categories (cards and sevens) award zero points.",
+  "deck_type": "spanish",
+  "initial_state": {
+    "dealer": 0,
+    "next_player": 1,
+    "score": {
+      "0": 11,
+      "1": 11
+    },
+    "stock_remaining": 0,
+    "hands": {
+      "0": [],
+      "1": []
+    },
+    "captured": {
+      "0": [
+        { "id": "ti0", "rank": "A", "suit": "OROS" },
+        { "id": "ti1", "rank": "7", "suit": "OROS" },
+        { "id": "ti2", "rank": "Q", "suit": "OROS" }
+      ],
+      "1": [
+        { "id": "ti3", "rank": "A", "suit": "COPAS" },
+        { "id": "ti4", "rank": "7", "suit": "ESPADAS" },
+        { "id": "ti5", "rank": "Q", "suit": "BASTOS" }
+      ]
+    },
+    "table": [],
+    "scopas": {
+      "0": 1,
+      "1": 1
+    },
+    "target_score": 15,
+    "scoring_suit": "OROS"
+  },
+  "action": {
+    "type": "assert_deck"
+  },
+  "expected": {
+    "state": {
+      "dealer": 0,
+      "next_player": 1,
+      "score": {
+        "0": 11,
+        "1": 11
+      },
+      "stock_remaining": 0,
+      "hands": {
+        "0": [],
+        "1": []
+      },
+      "captured": {
+        "0": [
+          { "id": "ti0", "rank": "A", "suit": "OROS" },
+          { "id": "ti1", "rank": "7", "suit": "OROS" },
+          { "id": "ti2", "rank": "Q", "suit": "OROS" }
+        ],
+      "1": [
+        { "id": "ti3", "rank": "A", "suit": "COPAS" },
+        { "id": "ti4", "rank": "7", "suit": "ESPADAS" },
+        { "id": "ti5", "rank": "Q", "suit": "BASTOS" }
+        ]
+      },
+      "table": [],
+      "scopas": {
+        "0": 1,
+        "1": 1
+      },
+      "target_score": 15,
+      "scoring_suit": "OROS"
+    },
+    "assertions": {
+      "category": "tied",
+      "cards_tied": true,
+      "sevens_tied": true,
+      "majority_points": {
+        "cards": 0,
+        "sevens": 0
+      }
+    }
+  }
+}

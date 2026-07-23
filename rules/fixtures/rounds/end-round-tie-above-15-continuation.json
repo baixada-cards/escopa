@@ -1,0 +1,91 @@
+{
+  "fixture_version": "escopa-fixture/v1",
+  "id": "rounds/end-round/tie-above-15-continues",
+  "ruleset": "escopa-2p-v1",
+  "description": "A tied match score above target does not end the match.",
+  "deck_type": "spanish",
+  "initial_state": {
+    "dealer": 0,
+    "next_player": 0,
+    "score": {
+      "0": 13,
+      "1": 16
+    },
+    "stock_remaining": 0,
+    "hands": {
+      "0": [
+        { "id": "at15p0", "rank": "K", "suit": "OROS" }
+      ],
+      "1": []
+    },
+    "captured": {
+      "0": [
+        { "id": "at15c0", "rank": "2", "suit": "COPAS" },
+        { "id": "at15c1", "rank": "3", "suit": "ESPADAS" }
+      ],
+      "1": [
+        { "id": "at15c2", "rank": "A", "suit": "OROS" },
+        { "id": "at15c3", "rank": "6", "suit": "BASTOS" }
+      ]
+    },
+    "table": [
+      { "id": "at15t0", "rank": "4", "suit": "COPAS" }
+    ],
+    "scopas": {
+      "0": 0,
+      "1": 0
+    },
+    "target_score": 15,
+    "scoring_suit": "OROS"
+  },
+  "action": {
+    "type": "play_card",
+    "player": 0,
+    "card_id": "at15p0"
+  },
+  "expected": {
+    "state": {
+      "dealer": 0,
+      "next_player": null,
+      "score": {
+        "0": 16,
+        "1": 16
+      },
+      "stock_remaining": 0,
+      "hands": {
+        "0": [],
+        "1": []
+      },
+      "captured": {
+        "0": [
+          { "id": "at15c0", "rank": "2", "suit": "COPAS" },
+          { "id": "at15c1", "rank": "3", "suit": "ESPADAS" },
+          { "id": "at15t0", "rank": "4", "suit": "COPAS" },
+          { "id": "at15p0", "rank": "K", "suit": "OROS" }
+        ],
+        "1": [
+          { "id": "at15c2", "rank": "A", "suit": "OROS" },
+          { "id": "at15c3", "rank": "6", "suit": "BASTOS" }
+        ]
+      },
+      "table": [],
+      "scopas": {
+        "0": 0,
+        "1": 0
+      },
+      "target_score": 15,
+      "scoring_suit": "OROS",
+      "last_captor": null,
+      "round_complete": true,
+      "match_complete": false,
+      "round_points": {
+        "0": 3,
+        "1": 0
+      }
+    },
+    "assertions": {
+      "match_end": false,
+      "round_end": true
+    }
+  }
+}

@@ -1,0 +1,141 @@
+.spcard,
+.spcard-back {
+  position: relative;
+  flex-shrink: 0;
+  border-radius: 6px;
+  box-shadow: var(--shadow-card);
+  user-select: none;
+}
+
+.spcard {
+  isolation: isolate;
+  background:
+    linear-gradient(180deg, var(--card-0) 0%, var(--card-1) 100%),
+    var(--card-0);
+  font-family: var(--font-serif);
+  line-height: normal;
+}
+
+.spcard-inner {
+  position: absolute;
+  inset: 4px;
+  overflow: hidden;
+  border: 1.5px solid var(--card-edge);
+  border-radius: 3px;
+  background:
+    radial-gradient(circle at 30% 20%, rgb(200 160 64 / 6%) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgb(200 160 64 / 5%) 0%, transparent 50%);
+}
+
+.spcard-inner::before {
+  position: absolute;
+  inset: 3px;
+  border: 0.5px solid var(--card-edge);
+  border-radius: 2px;
+  opacity: 0.5;
+  content: '';
+  pointer-events: none;
+}
+
+.spcard-corner {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.spcard-corner-tl {
+  top: 6px;
+  left: 6px;
+}
+
+.spcard-corner-br {
+  right: 6px;
+  bottom: 6px;
+  transform: rotate(180deg);
+}
+
+.spcard-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spcard-pip,
+.spcard-face {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spcard-pip {
+  gap: 4px;
+}
+
+.spcard-pip-num,
+.spcard-face-letter {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.spcard-pip-num {
+  letter-spacing: -0.02em;
+}
+
+.spcard-face {
+  gap: 6px;
+}
+
+.spcard-face-letter {
+  letter-spacing: -0.03em;
+}
+
+.spcard-face-label {
+  color: var(--ink-1);
+  font-family: var(--font-serif);
+  font-size: 11px;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+}
+
+.spcard-back {
+  background: linear-gradient(180deg, var(--card-back-a) 0%, var(--card-back-b) 100%);
+}
+
+.spcard-back-pattern {
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgb(200 160 100 / 25%);
+  border-radius: 3px;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgb(200 160 100 / 8%) 0,
+      rgb(200 160 100 / 8%) 1px,
+      transparent 1px,
+      transparent 8px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgb(200 160 100 / 8%) 0,
+      rgb(200 160 100 / 8%) 1px,
+      transparent 1px,
+      transparent 8px
+    );
+}
+
+.spcard-back-pattern::before {
+  position: absolute;
+  inset: 4px;
+  border: 0.5px solid rgb(200 160 100 / 20%);
+  border-radius: 2px;
+  content: '';
+}
