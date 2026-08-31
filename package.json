@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@baixada-cards/design-system": "git+https://github.com/baixada-cards/design-system.git#82638b7cdabbb56a4bce7b953e8571847bf6fda9",
-    "next": "^16.2.11",
+    "next": "^16.3.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
