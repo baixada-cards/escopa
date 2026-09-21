@@ -28,7 +28,7 @@ importers:
         version: https://codeload.github.com/baixada-cards/design-system/tar.gz/82638b7cdabbb56a4bce7b953e8571847bf6fda9(react@18.3.1)
       next:
         specifier: ^16.3.4
-        version: 16.3.4(@playwright/test@1.63.0)(@types/node@25.9.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 16.3.4(@playwright/test@1.63.0)(@types/node@25.9.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -43,8 +43,8 @@ importers:
         specifier: ^1.63.0
         version: 1.63.0
       '@types/node':
-        specifier: ^25.5.0
-        version: 25.9.5
+        specifier: ^25.9.6
+        version: 25.9.6
       '@types/react':
         specifier: ^18.3.18
         version: 18.3.31
@@ -463,8 +463,8 @@ packages:
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
-  '@types/node@25.9.5':
-    resolution: {integrity: sha512-OScDchr2fwuUmWdf4kZ9h7PcJiYDVInhJizG/biAq3cAvqwYktuy/TYGGdZNMtNTFUP7rnb0NU4TUdm82kt4Rg==}
+  '@types/node@25.9.6':
+    resolution: {integrity: sha512-JR6Q/PV5DKFvjrGFVqQJdeG0qvsqQQLDa3TzFrqVwhqRXqwNaxPo2KYCtCQXpOdIulCouKwT7a6in9nFthBAzw==}
 
   '@types/prop-types@15.7.15':
     resolution: {integrity: sha512-F6bEyamV9jKGAFBEmlQnesRPGOQqS2+Uwi0Em15xenOxHaf2hv6L8YCVn3rPdPJOiJfPiCnLIRyvwVaqMY3MIw==}
@@ -1587,7 +1587,7 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
-  '@types/node@25.9.5':
+  '@types/node@25.9.6':
     dependencies:
       undici-types: 7.24.6
 
@@ -2105,7 +2105,7 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  next@16.3.4(@playwright/test@1.63.0)(@types/node@25.9.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  next@16.3.4(@playwright/test@1.63.0)(@types/node@25.9.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@next/env': 16.3.4
       '@swc/helpers': 0.5.23
@@ -2125,7 +2125,7 @@ snapshots:
       '@next/swc-win32-arm64-msvc': 16.3.4
       '@next/swc-win32-x64-msvc': 16.3.4
       '@playwright/test': 1.63.0
-      sharp: 0.35.4(@types/node@25.9.5)
+      sharp: 0.35.4(@types/node@25.9.6)
     transitivePeerDependencies:
       - '@babel/core'
       - '@types/node'
@@ -2236,7 +2236,7 @@ snapshots:
 
   semver@7.8.5: {}
 
-  sharp@0.35.4(@types/node@25.9.5):
+  sharp@0.35.4(@types/node@25.9.6):
     dependencies:
       '@img/colour': 1.1.0
       detect-libc: 2.1.2
@@ -2267,7 +2267,7 @@ snapshots:
       '@img/sharp-win32-arm64': 0.35.4
       '@img/sharp-win32-ia32': 0.35.4
       '@img/sharp-win32-x64': 0.35.4
-      '@types/node': 25.9.5
+      '@types/node': 25.9.6
     optional: true
 
   shebang-command@2.0.0:
